@@ -75,21 +75,29 @@ collabDist(Author, Author, MaxDist) :-
 
 % Check if Author1 and Author2 worked on the same article
 collabDist(Author1, Author2, MaxDist) :-
-    MaxDist > 0,
-    articleAuthor(Article, Author1),  % Author1 is an author of Article
-    articleAuthor(Article, Author2).  % Author2 is also an author of Article
+    	MaxDist > 0,
+    	articleAuthor(Article, Author1),  % Author1 is an author of Article
+    	articleAuthor(Article, Author2).  % Author2 is also an author of Article
 
 % Check each author of article, until the author is author2
 collabDist(Author1, Author2, MaxDist) :-
-    MaxDist > 0,
-    articleAuthor(Article, Author1),
-    articleAuthor(Article, OtherAuthor),  % Check if any other author wrote the article
-    Author1 \= Author2,  % Make sure the other author isn't the same author (no other collaborator) 
-    MaxDist1 is MaxDist - 1,  % Reduce MaxDist by 1
-    collabDist(OtherAuthor, Author2, MaxDist1).  % Recursively check with reduced MaxDist
+    	MaxDist > 0,
+    	articleAuthor(Article, Author1),
+    	articleAuthor(Article, OtherAuthor),  % Check if any other author wrote the article
+    	Author1 \= Author2,  % Make sure the other author isn't the same author (no other collaborator) 
+    	MaxDist1 is MaxDist - 1,  % Reduce MaxDist by 1
+    	collabDist(OtherAuthor, Author2, MaxDist1).  % Recursively check with reduced MaxDist
 	
 
 %%%% SECTION: collabDistWithAI
 % Put your rules for collabDistWithAI in this section
 
-collabDist(Author1, Author2, MaxDist, AI).
+topicAI(Article, Author) :-
+	articleAuthor(Article, Author),
+	articleTopic(Article, artificial_intelligence).
+
+collabDistWithAI(Author1, Author2, MaxDist, none) :-
+    	Author = Author,
+	MaxDist >= 0.	
+
+collabDistWithAI(Author1, Author2, MaxDist, AI).
