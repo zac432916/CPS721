@@ -12,6 +12,25 @@
 % You may add additional comments as you choose but DO NOT MODIFY the comment lines below
 %
 
+% Authors
+author(paul_erdos).
+author(alice_smith).
+author(bob_jones).
+author(carol_davis).
+author(david_white).
+author(emily_brown).
+author(frank_green).
+author(grace_hall).
+author(henry_lee).
+author(irene_martin).
+
+% Publications
+publication(on_sets_of_distances_of_n_points).
+publication(machine_learning_for_beginners).
+publication(cybersecurity_best_practices).
+publication(data_structures_in_c).
+publication(advanced_python_programming).
+
 %%%%% SECTION: articleAuthor
 % Put your atomic statements for the articleAuthor predicate in this section
 
