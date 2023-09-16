@@ -15,16 +15,20 @@
 %%%%% SECTION: articleAuthor
 % Put your atomic statements for the articleAuthor predicate in this section
 
+articleAuthor(ARTICLE, AUTHOR)
 
 %%%%% SECTION: articleTopic
 % Put your atomic statements for the articleTopic predicate in this section
 
+articleTopic(ARTICLE, TOPIC)
 
 %%%%% SECTION: collabDist
 % Put your rules for collabDist in this section
 
+collabDist(COLLAB, DIST)
 
 %%%% SECTION: collabDistWithAI
 % Put your rules for collabDistWithAI in this section
 
+collabDistWithAI(DIST, AI)
 
