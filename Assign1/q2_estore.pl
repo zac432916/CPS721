@@ -44,7 +44,9 @@ freeExpressShippingMin(200).
 
 %%%%% SECTION: subtotal
 % Put your rules for the subtotal predicate in this section
-subtotal(Sub) :-  Sub is ((72 * 600) + (201 * 25) + (33 * 180)).
+subtotal(Sub) :-  cost(laptop, LaptopCost), numPurchased(laptop, LaptopAmount), cost(keyboard, KeyboardCost),
+numPurchased(keyboard, KeyboardAmount), cost(monitor, MonitorCost), numPurchased(monitor, MonitorAmount), 
+Sub is ((LaptopCost * LaptopAmount) + (KeyboardCost * KeyboardAmount) + (MonitorCost * MonitorAmount)).
 
 %%%%% SECTION: calculateBaseShipping
 % Put your rules for the calculateBaseShipping predicate in this section
