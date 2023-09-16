@@ -56,12 +56,25 @@ articleTopic(advanced_python_programming, programming).
 %%%%% SECTION: collabDist
 % Put your rules for collabDist in this section
 
+% Base case: MaxDist is 0, and Author1 is the same as Author2.
+collabDist(Author, Author, 0).
+
+% Recursive rule: MaxDist is greater than 0, and there's a collaboration on an article.
 collabDist(Author1, Author2, MaxDist) :-
     MaxDist > 0,
     articleAuthor(Article, Author1),  % Author1 is an author of Article
     articleAuthor(Article, Author2),  % Author2 is also an author of Article
     MaxDist1 is MaxDist - 1,          % Reduce MaxDist by 1
     collabDist(Author1, Author2, MaxDist1).  % Recursively check with reduced MaxDist
+
+% Recursive rule: MaxDist is greater than 0, and there's a collaboration through a third author.
+collabDist(Author1, Author2, MaxDist) :-
+    MaxDist > 0,
+    articleAuthor(Article, Author1),  % Author1 is an author of Article
+    articleAuthor(Article, Author3),  % Author3 is also an author of Article
+    Author1 \= Author3,               % Ensure Author1 and Author3 are different
+    collabDist(Author3, Author2, MaxDist1),  % Check if there's a path from Author3 to Author2
+    MaxDist1 is MaxDist - 1.                % Reduce MaxDist by 1
 
 %%%% SECTION: collabDistWithAI
 % Put your rules for collabDistWithAI in this section
