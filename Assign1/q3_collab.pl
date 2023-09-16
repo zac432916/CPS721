@@ -24,6 +24,16 @@ author(james_paul).
 author(lebron_james).
 author(ben_simmons).
 
+author(tina).
+author(jennifer).
+author(tom).
+
+publication(article1, tom).
+publication(article1, jennifer).
+
+publication(article2, jennifer).
+publication(article2, tina).
+
 % Publications
 publication(on_sets_of_distances_of_n_points).
 publication(machine_learning_for_beginners).
