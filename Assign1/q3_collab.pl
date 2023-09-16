@@ -92,12 +92,36 @@ collabDist(Author1, Author2, MaxDist) :-
 %%%% SECTION: collabDistWithAI
 % Put your rules for collabDistWithAI in this section
 
-topicAI(Article, Author) :-
+collabDist(Author, Author, MaxDist, none) :-
+	Author = Author,
 	articleAuthor(Article, Author),
-	articleTopic(Article, artificial_intelligence).
+	not articleTopic(Article, artificial_intelligence),
+	MaxDist >= 0.
 
-collabDistWithAI(Author1, Author2, MaxDist, none) :-
-    	Author = Author,
-	MaxDist >= 0.	
+collabDist(Author, Author, MaxDist, at_least_one) :-
+	Author = Author,
+	articleAuthor(Article, Author),
+	articleTopic(Article, artificial_intelligence),
+	MaxDist >= 0.
 
-collabDistWithAI(Author1, Author2, MaxDist, AI).
+collabDistWithAI(Author1, Author2, MaxDist, AI) :-
+    	MaxDist > 0,
+    	articleAuthor(Article, Author1),
+    	articleAuthor(Article, Author2),
+    	AI = none,
+    	not articleTopic(Article, artificial_intelligence).
+
+collabDistWithAI(Author1, Author2, MaxDist, AI) :-
+    	MaxDist > 0,
+    	articleAuthor(Article, Author1),
+    	articleAuthor(Article, Author2),
+    	AI = at_least_one,
+    	articleTopic(Article, artificial_intelligence).
+
+collabDistWithAI(Author1, Author2, MaxDist, AI) :-
+    	MaxDist > 0,
+    	articleAuthor(Article, Author1),
+    	articleAuthor(Article, OtherAuthor),
+    	Author1 \= Author2,
+    	MaxDist1 is MaxDist - 1,
+    	collabDistWithAI(OtherAuthor, Author2, MaxDist1, AI).
