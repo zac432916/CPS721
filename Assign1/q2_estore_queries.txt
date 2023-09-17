@@ -2,7 +2,7 @@
 % If you only have 2 group members, leave the last space blank
 %
 %%%%%
-%%%%% NAME: 
+%%%%% NAME: Humza Khan (501110642)
 %%%%% NAME:
 %%%%% NAME:
 %
@@ -19,27 +19,38 @@
 
 
 %%%%%% QUERY 1
-% EXPLANATION: 
+% EXPLANATION: Calculates the subtotal of the items in cart. stores subtotal in variable <Sub>.
+% Subtotal should be 3950.
+subtotal(Sub).
 
 
 %%%%%% QUERY 2
-% EXPLANATION: 
+% EXPLANATION: Calculates the base shipping price before the regular/express shipping option, stores it in- 
+% variable <ShippingCost>
+calculateBaseShipping(ShippingCost).
 
 
 %%%%%% QUERY 3
-% EXPLANATION: 
+% EXPLANATION: Calculates the shipping price of the regular shipping option, stores it in variable <ShippingCost>.
+% The shipping cost should be the same as base shipping.
+calculateShipping(regular, ShippingCost).
 
 
 %%%%%% QUERY 4
-% EXPLANATION: 
+% EXPLANATION: Calculates the shipping price of the express shipping option, stores it in variable <ShippingCost>.
+% Cost is to be 1.5x the base shipping price.
+calculateShipping(express, ShippingCost).
 
 %%%%%% QUERY 5
-% EXPLANATION: 
+% EXPLANATION: Calculates the total cost of purchasing all items in cart, including tax and regular shipping price,
+% stored in the variable <Cost>. The shipping should be free as the subtotal is above the criteria for free regular shipping.
+totalCost(regular, Cost).
 
 
 %%%%%% QUERY 6
-% EXPLANATION: 
-
+% EXPLANATION: Calculates the total cost of purchasing all items in cart, including tax and express shipping price,
+% stored in the variable <Cost>. Shipping is not free since the subtotal is below the criteria for free express shipping.
+totalCost(express, Cost).
 
 % If you want to add more queries, put them above and use the same formatting as given above.
 
