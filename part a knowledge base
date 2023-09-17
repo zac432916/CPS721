@@ -1,0 +1,60 @@
+part A kb 
+% Define album artists
+
+albumArtist(thank_you_next, ariana_grande).
+albumArtist(kamikaze, eminem).
+albumArtist(anti, rihanna).
+albumArtist(views, drake).
+albumArtist(recovery, eminem).
+
+albumArtist(renaissance, beyonce).
+albumArtist(midnights, taylor_swift).
+albumArtist(scorpion, drake).
+albumArtist(loud, rihanna).
+albumArtist(nothing_was_the_same, drake).
+
+albumArtist(unapologetic, rihanna).
+albumArtist(the_marshall_mathers_lp, eminem).
+albumArtist(beyonce, beyonce).
+albumArtist(fearless, taylor_swift).
+albumArtist(blonde, frank_ocean).
+
+% Define album labels 
+
+albumLabel(thank_you_next, republic).
+albumLabel(kamikaze, shady_labels).
+albumLabel(anti, rock_notion).
+albumLabel(views, republic_records).
+albumLabel(recovery, shady_labels).
+
+albumLabel(renaissance, sony_music).
+albumLabel(midnights, universal_music).
+albumLabel(scorpion, republic_records).
+albumLabel(loud, def_jam).
+albumLabel(nothing_was_the_same, republic_records).
+
+albumLabel(unapologetic, def_jam).
+albumLabel(the_marshall_mathers_lp, interscope).
+albumLabel(beyonce, sony_music).
+albumLabel(fearless, big_machine_label_group).
+albumLabel(blonde, def_jams_recordings).
+
+% Define release years
+
+releaseYear(thank_you_next, 2019).
+releaseYear(kamikaze, 2018).
+releaseYear(anti, 2016).
+releaseYear(views, 2016).
+releaseYear(recovery, 2010).
+
+releaseYear(renaissance, 2020).
+releaseYear(midnights, 2021).
+releaseYear(scorpion, 2018).
+releaseYear(loud, 2010).
+releaseYear(nothing_was_the_same, 2013).
+
+releaseYear(unapologetic, 2012).
+releaseYear(the_marshall_mathers_lp, 2000).
+releaseYear(beyonce, 2013).
+releaseYear(fearless, 2008).
+releaseYear(blonde, 2016).
